@@ -2,8 +2,6 @@
 
 # TODO
 #
-# - WRITE a trigger Kernel module similar to iio-trig-hrtimer
-#   (with frequencies < 1Hz) if you can't get this working!
 # - Add case control flow for setup | teardown.
 # - Remove hardwired stuff, get more generic.
 # - enriched comments
@@ -33,8 +31,9 @@ sudo su -c "echo -n 1 > $CHANNEL_DIR/in_temp_en"
 sudo su -c "echo -n 1 > $CHANNEL_DIR/in_timestamp_en"
 sudo su -c "echo -n 1 > /sys/bus/iio/devices/iio:device0/buffer/enable"
 
-# trigger events in sysfs
+# Trigger events in sysfs with a frequency of 1/3 Hz that is appropriate
+# for AM2315/ AM2321 according to datasheets.
 while true; do
-    sudo su -c "echo -n 1 /sys/devices/iio:trigger0/trigger_now"
+    sudo su -c "echo -n 0 > /sys/bus/iio/devices/trigger0/trigger_now"
     sleep 3
 done
