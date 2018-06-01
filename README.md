@@ -17,4 +17,10 @@ The repo contains a very simple utility (``catiio``) for reading output (relativ
 ## Technical notes
 The I2C address used for AM2315 and AM2321 devices is always ``0x5c``. Therefore there can never exist more than one of these devices per I2C adapter or bus.
 
+``catiio`` is essentially about decoding data described like
+in_humidityrelative_type    le:s16/16>>0
+in_temp_type		    le:s16/16>>0
+in_timestamp_type	    le:s64/64>>0
+on the character device providing values from sensors.
+
 REPO IS WORK IN PROGRESS UNTIL FURTHER NOTICE.
