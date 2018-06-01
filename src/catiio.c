@@ -95,10 +95,15 @@ int main (int argc, char* argv[]) {
 
             /*@out@*/
             tvtostr(timestr, sizeof timestr, ts);
-            printf("RH_raw %d T_raw %d ts_iio %"PRId64" "
-                   "RH %4.1f T %+4.1f ts %s\n",
+            printf("RH_raw %3d T_raw %6d ts_iio %"PRId64" "
+                   "RH %4.1f T %+5.1f %s\n",
                    RH_raw, T_raw, ts_raw,
-                   RH_raw / 10.0f, T_raw / 10.0f, timestr);
+                   RH_raw / 10.0f,
+		   /* T_raw has high order bit set for negative Celsius
+		      temperatures (e.g. 0x8003 for -0.3°C). So we set
+		      it to 0 change the sign :) */
+		   T_raw < 0 ? (T_raw & 0x7fff) / -10.0f : T_raw / 10.0f,
+		   timestr);
         }
     }
 }
