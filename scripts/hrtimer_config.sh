@@ -14,7 +14,7 @@ sudo -v -p "[sudo] please let me have your password: "
 # load
 sudo modprobe -v $MOD
 
-# create nwe i2c device on proper bus
+# create new i2c device on proper bus
 sudo su -c "echo -n $MOD 0x5c > /sys/bus/i2c/devices/i2c-1/new_device"
 
 # trigger setup
