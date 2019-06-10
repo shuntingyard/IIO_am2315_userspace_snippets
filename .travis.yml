@@ -1,8 +1,5 @@
-compiler:
-    gcc
-  
-build:
-    make
-
-echo:
-    "Will this work?"
+language: c
+compiler: gcc
+build: make
+script:
+    echo "Will this work?"
