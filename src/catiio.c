@@ -7,12 +7,12 @@
 #include <time.h>
 
 
-#define	BUF_LENGTH		16
-#define	LSB_RH			 0
-#define	MSB_RH			 1
-#define	LSB_T			 2
-#define	MSB_T			 3
-#define LSB_TS			 8
+#define BUF_LENGTH      16
+#define LSB_RH           0
+#define MSB_RH           1
+#define LSB_T            2
+#define MSB_T            3
+#define LSB_TS           8
 
 
 /*@null@*/
@@ -42,7 +42,7 @@ static uint64_t lshift64 (char c, int bytes) {
     return uint64;
 }
 
-static void tvtostr (char *str, size_t size, struct timeval tv) {
+static void tvtostr(char *str, size_t size, struct timeval tv) {
 
     time_t epoch_in;
     struct tm *tm_in;
@@ -99,11 +99,11 @@ int main (int argc, char* argv[]) {
                    "RH %4.1f T %+5.1f %s\n",
                    RH_raw, T_raw, ts_raw,
                    RH_raw / 10.0f,
-		   /* T_raw has high order bit set for negative Celsius
-		      temperatures (e.g. 0x8003 for -0.3°C). So we set
-		      it to 0 and change the sign :) */
-		   T_raw < 0 ? (T_raw & 0x7fff) / -10.0f : T_raw / 10.0f,
-		   timestr);
+                   /* T_raw has high order bit set for negative Celsius
+                      temperature.
+                    */
+                   T_raw < 0 ? (T_raw & 0x7fff) / -10.0f : T_raw / 10.0f,
+                   timestr);
         }
     }
 }

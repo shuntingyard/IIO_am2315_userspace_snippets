@@ -1,0 +1,8 @@
+compiler:
+    gcc
+  
+build:
+    make
+
+echo:
+    "Will this work?"
