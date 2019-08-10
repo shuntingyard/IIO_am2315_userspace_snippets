@@ -2,6 +2,8 @@
 
 # TODO
 #
+# - MAKE THIS SCRIPT WORK in the first place, catiio gets read errors.
+#
 # - Add case control flow for setup | teardown.
 # - Remove hardwired stuff, get more generic.
 # - enriched comments
@@ -20,7 +22,7 @@ sudo su -c "echo -n $MOD 0x5c > /sys/bus/i2c/devices/i2c-1/new_device"
 # trigger setup
 sudo modprobe -v iio-trig-hrtimer
 sudo mkdir -p "/sys/kernel/config/iio/triggers/hrtimer/$MOD-ht"
-sudo su -c "echo -n 3000 > /sys/devices/trigger0/sampling_frequency"
+sudo su -c "echo -n 100 > /sys/devices/trigger0/sampling_frequency"
 
 # associate trigger with iio device
 sudo su -c "echo -n $MOD-ht > /sys/bus/iio/devices/iio:device0/trigger/current_trigger"
