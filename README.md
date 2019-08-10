@@ -1,6 +1,6 @@
 # IIO_am2315_userspace_snippets
 
-[![Build Status](https://travis-ci.com/shuntingyard/IIO_am2315_userspace_snippets.svg?branch=master)](https://travis-ci.com/shuntingyard/IIO_am2315_userspace_snippets)
+[![Build Status](https://travis-ci.org/shuntingyard/IIO_am2315_userspace_snippets.svg?branch=master)](https://travis-ci.org/shuntingyard/IIO_am2315_userspace_snippets)
 
 ## What is this about?
 One of the modules in the **Linux Industrial I/O Subsystem** (IIO) is called `am2315`. It is used to drive I2C sensors for relative humidity and temperature - more specifically the devices known as AM2315 and Aosong AM2321.
