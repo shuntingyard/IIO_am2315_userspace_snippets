@@ -5,7 +5,5 @@ compiler: gcc
 build: make
 
 script:
-  - make
-    # Simply testing if the executable executes, i.e. prints its usage text.
-    ./catiio | grep DEVICE_PATH
-    make clean
+  - make;
+    ./catiio | grep DEVICE_PATH;
