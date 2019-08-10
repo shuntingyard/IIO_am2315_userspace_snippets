@@ -1,5 +1,7 @@
 # IIO_am2315_userspace_snippets
 
+[![Build Status](https://travis-ci.org/shuntingyard/IIO_am2315_userspace_snippets.svg?branch=master)](https://travis-ci.org/shuntingyard/IIO_am2315_userspace_snippets)
+
 ## What is this about?
 One of the modules in the **Linux Industrial I/O Subsystem** (IIO) is called `am2315`. It is used to drive I2C sensors for relative humidity and temperature - more specifically the devices known as AM2315 and Aosong AM2321.
 
@@ -26,5 +28,3 @@ The I2C address used for AM2315 and AM2321 devices is always `0x5c`. Therefore t
 `le:s64/64>>0` for `in_timestamp_type`
 
 on the character device providing values from sensors.
-
-[![Build Status](https://travis-ci.org/shuntingyard/IIO_am2315_userspace_snippets.svg?branch=master)](https://travis-ci.org/shuntingyard/IIO_am2315_userspace_snippets)

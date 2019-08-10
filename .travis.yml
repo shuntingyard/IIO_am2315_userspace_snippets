@@ -1,5 +1,9 @@
 language: c
+
 compiler: gcc
+
 build: make
+
 script:
-    echo "Will this work?"
+    # Simply testing if the executable executes, i.e. prints its usage text.
+  - ./catiio | grep DEVICE_PATH
